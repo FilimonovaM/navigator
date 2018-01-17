@@ -190,7 +190,7 @@ public class GUI extends JFrame {
                     textArea.setText(str_catcher.reader(selectedFile.getPath()));
                     selectedFile = null;
                 } else {
-
+                    textArea.setText("Choose the exist file");
                 }
 
             }
