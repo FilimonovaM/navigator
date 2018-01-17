@@ -10,9 +10,6 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
 
-/**
- * C:\Users\south\Desktop\Programmers\The_File_Explorier
- */
 public class GUI extends JFrame {
     private final String DEFAULT_DIRECTORY = ".";
     private final int DEFAULT_WEIGTH = 640;

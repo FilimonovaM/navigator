@@ -2,9 +2,6 @@ package window;
 
 import java.awt.event.*;
 
-/**
- * Created by south on 13.02.2017.
- */
 public class ActionList extends MouseAdapter
         implements ActionListener, KeyListener {
     private final GUI frame;
