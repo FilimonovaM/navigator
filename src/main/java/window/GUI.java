@@ -19,7 +19,7 @@ public class GUI extends JFrame {
     private final int DEFAULT_HEIGTH = 480;
     private Font font = new Font(Font.SANS_SERIF, Font.ITALIC, 22);
     private Font menuFont = new Font(Font.SANS_SERIF, Font.PLAIN, 16);
-    private File choozenDir = new File(DEFAULT_DIRECTORY);
+    private File chosenDir = new File(DEFAULT_DIRECTORY);
     private FileFilter filter = new window.FileFilter();
     private DefaultListModel listModel = new DefaultListModel();
     private JFileChooser jf;
@@ -62,10 +62,10 @@ public class GUI extends JFrame {
     }
 
     private void choozen(String str) throws java.io.IOException {
-        choozenDir = new File(str);
+        chosenDir = new File(str);
         listModel.removeAllElements();
-        files = choozenDir.listFiles(filter);
-        choozenDir = null;
+        files = chosenDir.listFiles(filter);
+        chosenDir = null;
         for (int i = 0; i < files.length; i++) {
             listModel.addElement(files[i]);
         }
@@ -94,8 +94,8 @@ public class GUI extends JFrame {
                 int res = jf.showOpenDialog(contentPane);
                 if (res == jf.APPROVE_OPTION) {
                     try {
-                        choozenDir = jf.getSelectedFile();
-                        choozen(choozenDir.getPath());
+                        chosenDir = jf.getSelectedFile();
+                        choozen(chosenDir.getPath());
 
                     } catch (IOException e1) {
                         System.err.println("Error: " + e1.getMessage());
@@ -137,8 +137,8 @@ public class GUI extends JFrame {
                 File file = new File(str);
                 try {
                     if (file.exists() && file.isDirectory()) {
-                        choozenDir = new File(str);
-                        choozen(choozenDir.getPath());
+                        chosenDir = new File(str);
+                        choozen(chosenDir.getPath());
                         System.out.println(str);
 
                     } else {
